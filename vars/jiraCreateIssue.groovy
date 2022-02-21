@@ -10,5 +10,5 @@ def call(Map config=[:]) {
   def render2 = render.replaceAll("\\s","")
   def cmd = """curl -D- -u $JIRA_CREDENTIALS -X POST --data \"${render2}\" -H \"Content-Type: application/json\" $JIRA_URL/rest/api/2/issue"""
   echo cmd
-  def response = bat(cmd)
+  bat(cmd)
 }
